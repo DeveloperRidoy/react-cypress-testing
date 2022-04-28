@@ -3,7 +3,7 @@ import "./Rewards.css"
 
 function Rewards() {
 
-    const [rewards, setReward] = useState([
+    const [rewards] = useState([
         {
             id: 1,
             reward: "500 points for drinking 8 cups of water for 7 straight days",
@@ -60,7 +60,7 @@ function Rewards() {
             return reward.month === filter
         });
         setFilteredRewards(updatedFilterRewards);
-    }, [filter])
+    }, [filter, rewards])
 
     return (
         <div className="Rewards">
@@ -76,9 +76,9 @@ function Rewards() {
                 </select>
             </div>
             <ul className="Rewards-cards-container">
-                {filteredRewards.map(reward => {
+                {filteredRewards.map((reward, i) => {
                     return (
-                        <li className="Rewards-cards-list">
+                        <li className="Rewards-cards-list" key={i}>
                             {reward.reward}
                         </li>
                     )
