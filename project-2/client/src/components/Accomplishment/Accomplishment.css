@@ -45,7 +45,7 @@
     align-items: center;
 }
 
-.Accomplishment-checkbox-container p {
+.Accomplishment-checkbox-container label {
     margin-top: 0.9rem;
     margin-left: 0.5rem;
 }
